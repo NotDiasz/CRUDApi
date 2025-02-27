@@ -2,6 +2,7 @@ const serviceUser = require("../services/user")
 
 class ApiUser {
     async FindAll( req, res) {
+
         try {
             const result = await serviceUser.FindAll()
             res.status(200).send({result}) 
@@ -49,6 +50,7 @@ class ApiUser {
     }
 
     async Login(req , res) {
+        
         try {
             const {email , password} = req.body
             const token = await serviceUser.Login(email, password)
@@ -57,6 +59,7 @@ class ApiUser {
         } catch (e) {
             res.status(500).send({msg: e.message})
         }
+
     }
 
 }

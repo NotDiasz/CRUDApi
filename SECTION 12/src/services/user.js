@@ -69,8 +69,6 @@ class ServiceUser {
     }
 
     
-
-
 }
 
 module.exports = new ServiceUser();
